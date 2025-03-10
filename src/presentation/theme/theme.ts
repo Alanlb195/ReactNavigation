@@ -18,13 +18,14 @@ export const GlobalStyles = StyleSheet.create({
 
     container: {
         flex: 1,
-        paddingHorizontal: 20,
+        // paddingHorizontal: 20,
+        paddingVertical: 15,
         backgroundColor: GlobalColors.background
     },
 
     primaryButton: {
         backgroundColor: GlobalColors.primary,
-        borderRadius: 5,
+        borderRadius: 15,
         padding: 10,
         marginBottom: 10,
         width: '100%',

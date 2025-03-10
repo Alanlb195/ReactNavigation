@@ -18,9 +18,9 @@ export const PrimaryButton = ({ onPress, label }: Props) => {
     return (
 
         <Pressable
-            onPress={ () => onPress() }
+            onPress={() => onPress()}
             style={GlobalStyles.primaryButton}>
-            <Text style={GlobalStyles.buttonText}>{ label }</Text>
+            <Text style={GlobalStyles.buttonText}>{label}</Text>
         </Pressable>
 
     )

@@ -1,7 +1,7 @@
-import {DrawerActions, useNavigation} from '@react-navigation/native';
-import React, {useEffect} from 'react';
-import {Pressable, useWindowDimensions} from 'react-native';
-import {IonIcon} from './IonIcon';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { Pressable, useWindowDimensions } from 'react-native';
+import { IonIcon } from './IonIcon';
 
 export const HamburgerMenu = () => {
   const navigation = useNavigation();
@@ -10,14 +10,14 @@ export const HamburgerMenu = () => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () =>
-        dimentions.width >= 600 ? (
+        dimentions.width >= 768 ? (
           <></>
         ) : (
           <>
             <Pressable
-              style={{marginHorizontal: 10}}
+              style={{ marginHorizontal: 10 }}
               onPress={() => navigation.dispatch(DrawerActions.toggleDrawer)}>
-              <IonIcon name="menu-outline" />
+              <IonIcon name="menu-sharp" />
             </Pressable>
           </>
         ),

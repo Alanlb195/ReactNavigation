@@ -19,12 +19,6 @@ export const Product = () => {
 
   return (
     <View style={ GlobalStyles.container }>
-        <Text>Product screen</Text>
-
-        <Text style={ { marginTop: 20, fontSize: 20, textAlign: 'center' } }>
-          { params.id } - { params.name }
-        </Text>
-
     </View>
   )
 }

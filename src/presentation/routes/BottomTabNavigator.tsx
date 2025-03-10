@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Tab1 } from '../screens/tabs/Tab1';
+import { ContractsTab } from '../screens/tabs/ContractsTab';
 import { GlobalColors } from '../theme/theme';
-import { Text } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
 import { StackNavigator } from './StackNavigator';
 import { IonIcon } from '../components/shared/IonIcon';
@@ -15,7 +14,7 @@ export const BottomTabNavigator = () => {
         tabBarActiveTintColor: GlobalColors.primary,
         headerShown: true,
         tabBarLabelStyle: {
-          marginBottom: 5
+          marginBottom: 0
         },
         headerStyle: {
           elevation: 0,
@@ -24,12 +23,44 @@ export const BottomTabNavigator = () => {
         },
         tabBarStyle: {
           borderTopWidth: 0,
-          elevation: 0
+          elevation: 0,
+          paddingBottom: 10
         },
+        tabBarLabelPosition: 'beside-icon',
+
+        tabBarBadgeStyle: {
+          color: 'white',
+          backgroundColor: 'red',
+        },
+
+        // animation: 'fade'
       }}>
-      <Tab.Screen options={ { title: 'Contracts', tabBarIcon: ({ color }) => (<IonIcon name='document-text-outline' color={ color }/>) } } name="Tab1" component={Tab1} />
-      <Tab.Screen options={ { title: 'Orders', tabBarIcon: ({ color }) => (<IonIcon name='bag-outline' color={ color }/>) } } name="Tab2" component={TopTabNavigator} />
-      <Tab.Screen options={ { title: 'Stock', tabBarIcon: ({ color }) => (<IonIcon name='cube-outline' color={ color }/>) } } name="Tab3" component={StackNavigator} />
+
+      <Tab.Screen options={{
+        title: 'Contracts',
+        tabBarIcon: ({ color }) => (<IonIcon name='document-text-outline' color={color} size={25} />)
+      }}
+        name="TAB_1"
+        component={ContractsTab}
+      />
+
+      <Tab.Screen options={{
+        title: 'Stock',
+        tabBarIcon: ({ color }) => (<IonIcon name='cube-outline' color={color} size={25}/>)
+      }}
+        name="TAB_3"
+        component={StackNavigator}
+      />
+
+      <Tab.Screen options={{
+        title: 'Orders',
+        tabBarIcon: ({ color }) => (<IonIcon name='bag-outline' color={color} size={25}/>),
+        tabBarBadge: '1',
+      }}
+        name="TAB_2"
+        component={TopTabNavigator}
+      />
+
     </Tab.Navigator>
   );
 }

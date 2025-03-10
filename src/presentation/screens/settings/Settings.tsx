@@ -10,8 +10,6 @@ export const Settings = () => {
 
   return (
     <View style={ GlobalStyles.container }>
-        <Text>Settings screen</Text>
-
         <PrimaryButton label='Go Back'
           onPress={ () => {
             navigator.goBack();
